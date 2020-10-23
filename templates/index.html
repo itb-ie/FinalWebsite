@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Contract Generator</title>
+{% endblock %}
+
+{% block body %}
+    <div class="imagediv">
+        <img id="logo" src="{{ url_for('static', filename='doc-generator.gif')}}" alt="ie logo">
+    </div>
+    <h1>Welcome to Contract Generator Online™</h1>
+
+    <form action="/" method="POST">
+        <div class="settings">
+            <label for="lname">Lawyer</label>
+            <input type="text" placeholder="Lawyer Name" name="lawyer" id="lname">
+            <label for="cname">Client</label>
+            <input type="text" placeholder="Client Name" name="client" id="cname">
+            <label for="service">Service</label>
+            <input type="text" placeholder="Service Performed" name="service" id="service">
+            <label for="comp">Compensation</label>
+            <input type="number" min="10" max="100000" placeholder="Compensation ($)" name="comp" id="comp">
+            <label for="deposit">Deposit Value</label>
+            <input type="number" min="10" max="100000" placeholder="Deposit Value" name="deposit" id="deposit">
+            <label for="deposit_date">Deposit Date</label>
+            <input type="date" placeholder="Deposit Date" name="deposit_date" id="deposit_date">
+            <label for="jur">Jurisdiction</label>
+            <select name="jur" id="jur">
+                <option value="United States">USA</option>
+                <option value="United Kingdom">UK</option>
+                <option value="Spain">Spain</option>
+                <option value="Bali">Bali</option>
+            </select>
+            <label></label>
+            <input type="submit" value="Generate Contract">
+        </div>
+    </form>
+
+{% endblock %}
